@@ -20,7 +20,7 @@ public class testPatient {
     }
     @Test
     void testGivenNameFailure() {
-       Exception ex = assertThrows(IllegalArgumentException.class, ()-> {});
+       Exception ex = assertThrows(IllegalArgumentException.class, ()-> {new Patient("Ba");});
        assertEquals("Minimum 3 characters required", ex.getMessage());
     }
 
@@ -30,7 +30,7 @@ public class testPatient {
     }
     @Test
     void testFamilyNameFailure() {
-        Exception ex = assertThrows(IllegalArgumentException.class, ()-> {});
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> {new Patient("Dr");});
         assertEquals("Minimum 3 characters required", ex.getMessage());
     }
 
@@ -40,13 +40,14 @@ public class testPatient {
     }
     @Test
     void testHSEnumFailure() {
-        Exception ex = assertThrows(IllegalArgumentException.class, ()-> {});
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> {new Patient("1234");});
         assertEquals("Must be exactly 10 numeric characters", ex.getMessage());
     }
 
     @Test
     void testAgeSuccess() {
-        assertEquals(20, myP.age());
+        //assertEquals(20, myP.age());
+        assertEquals(20, new Patient(20));
     }
     @Test
     void testAgeFailure() {
