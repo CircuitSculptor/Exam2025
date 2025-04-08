@@ -9,9 +9,11 @@ public class testPatient {
     /*
     @BeforeEach
     void setup() {
-        Patient myP;
+        //Patient myP;
+        myP = new Patient();
     }
     */
+
     @Test
     void testGivenNameSuccess() {
         assertEquals("Bartek", myP.givenName);
@@ -44,11 +46,11 @@ public class testPatient {
 
     @Test
     void testAgeSuccess() {
-        assertEquals(20, myP.age);
+        assertEquals(20, myP.age());
     }
     @Test
     void testAgeFailure() {
-        Exception ex =assertThrows(IllegalArgumentException.class, ()-> {});
+        Exception ex =assertThrows(IllegalArgumentException.class, ()-> {new Patient(30);});
         assertEquals("Must be between 0 and 120", ex.getMessage());
     }
 
