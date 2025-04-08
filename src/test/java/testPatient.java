@@ -6,10 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class testPatient {
     Patient myP;
+    /*
     @BeforeEach
     void setup() {
         Patient myP;
     }
+    */
     @Test
     void testGivenNameSuccess() {
         assertEquals("Bartek", myP.givenName);

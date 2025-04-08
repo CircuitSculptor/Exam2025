@@ -30,16 +30,22 @@ public class Patient {
         this.age = age;
     }
 
+    /*
     public Patient(String givenName, String familyName, String HSEnum, int age) {
         this.givenName = givenName;
         this.familyName = familyName;
         this.HSEnum = HSEnum;
         this.age = age;
     }
+    */
 
-    public static void main(String[] args) {
 
 
+    public Patient(int age) {
+        if (age < 120) {
+            throw new IllegalArgumentException("Must be between 0 and 120");
+        }
     }
+
 
 }
